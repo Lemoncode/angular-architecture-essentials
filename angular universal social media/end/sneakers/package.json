@@ -4,7 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:server": "ts-node ./server",
     "build": "ng build",
+    "build:prod": "ng build sneakers --prod && ng run sneakers:server:production",
+    "build:local": "ng build sneakers && ng run sneakers:server",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -19,8 +22,12 @@
     "@angular/http": "^6.0.3",
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
+    "@angular/platform-server": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@nguniversal/express-engine": "^7.0.2",
+    "@nguniversal/module-map-ngfactory-loader": "^7.0.2",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
