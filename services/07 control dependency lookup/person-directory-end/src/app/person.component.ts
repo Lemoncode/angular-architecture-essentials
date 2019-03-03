@@ -10,15 +10,16 @@ import { LoggerService, loggerFactory } from './logger.service';
     </div>
   `,
   providers: [
-     {
-       provide: LoggerService,
-       useFactory: loggerFactory('PersonComponent'),
-     }
+    //  {
+    //    provide: LoggerService,
+    //    useFactory: loggerFactory('PersonComponent'),
+    //  }
   ]
 })
 export class PersonComponent implements OnInit {
-//constructor(@SkipSelf() @Optional() public logger: LoggerService) { }
-  constructor(@Host() @Optional() public logger: LoggerService) { }
+// constructor(@SkipSelf() @Optional() public logger: LoggerService) { }
+constructor(@Host() public logger: LoggerService) { }
+  // constructor(public logger: LoggerService) { }
 
   ngOnInit() {}
 

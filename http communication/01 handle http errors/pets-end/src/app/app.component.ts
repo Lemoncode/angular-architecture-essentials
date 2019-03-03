@@ -33,7 +33,7 @@ export class AppComponent {
   constructor(private petsService: PetsService) {}
 
   fetchPets() {
-    this.petsService.fetchPets()
+    this.petsService.fetchPets() // this.service.op.unsubscribe()
       .subscribe((result) => {
         this.pets = result;
         this.pets.push({

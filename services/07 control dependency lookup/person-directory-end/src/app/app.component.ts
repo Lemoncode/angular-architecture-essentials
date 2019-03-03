@@ -10,10 +10,10 @@ import { LoggerService, loggerFactory } from './logger.service';
     <app-person></app-person>
   `,
   providers: [
-    {
-      provide: LoggerService,
-      useFactory: loggerFactory('AppComponent'),
-    }
+    // {
+    //   provide: LoggerService,
+    //   useFactory: loggerFactory('AppComponent'),
+    // }
   ]
 })
 export class AppComponent {}

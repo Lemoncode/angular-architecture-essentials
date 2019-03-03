@@ -37,9 +37,9 @@ export class PetsService {
           delay(1000),
           flatMap((error) => {
             if (retries-- > 0) {
-              return of(error)
+              return of(error);
             } else {
-              return throwError(error)
+              return throwError(error);
             }
           })
         )

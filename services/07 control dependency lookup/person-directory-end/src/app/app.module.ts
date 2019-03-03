@@ -14,10 +14,10 @@ import { LoggerService, loggerFactory } from './logger.service'
     BrowserModule
   ],
   providers: [
-    // {
-    //   provide: LoggerService,
-    //   useFactory: loggerFactory('AppModule'),
-    // }
+    {
+      provide: LoggerService,
+      useFactory: loggerFactory('AppModule'),
+    }
   ],
   bootstrap: [AppComponent]
 })
