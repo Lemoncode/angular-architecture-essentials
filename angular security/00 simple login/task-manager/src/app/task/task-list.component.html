@@ -1,3 +1,19 @@
-<p>
-  task-list works!
-</p>
+<div class="danger">{{error}}</div>
+<div class="table-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource">
+
+    <!-- Name/Description Column -->
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let task">
+          <div>
+            <a routerLink="/task/{{task.id}}"><strong>{{task.name}}</strong></a>
+          </div>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

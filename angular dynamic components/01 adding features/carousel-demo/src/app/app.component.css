@@ -1,0 +1,20 @@
+.carousel-item {
+  box-sizing: content-box;
+  padding: 0.2rem;
+  background-color: rgba( lightgrey, 1.0);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  min-width: 300px;
+}
+
+.carousel-item.carousel-item-header {
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.action.actions-item {
+  margin-right: 1rem;
+}

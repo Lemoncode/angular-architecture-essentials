@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "name": "foo",
+        "milestones": [
+            {
+                "id": 1,
+                "name": "foo_milestone",
+                "taskId": 1,
+                "milestoneStatusId": 1,
+            }
+        ],
+        "userPermissions": [],
+    },
+    {
+        "id": 2,
+        "name": "boo",
+        "milestones": [
+            {
+                "id": 1,
+                "name": "boo_milestone",
+                "taskId": 2,
+                "milestoneStatusId": 2,
+            }
+        ],
+        "userPermissions": [],
+    },
+]

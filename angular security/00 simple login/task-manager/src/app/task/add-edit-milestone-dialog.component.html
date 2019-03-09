@@ -1,3 +1,22 @@
-<p>
-  add-edit-milestone-dialog works!
-</p>
+<h1 *ngIf="data.mode === 'Add'" mat-dialog-title>Add Milestone</h1>
+<h1 *ngIf="data.mode !== 'Add'" mat-dialog-title>Edit Milestone</h1>
+<div mat-dialog-content>
+  <mat-form-field style="width:300px">
+    <input #name="ngModel" matInput [(ngModel)]="data.milestone.name" cdkFocusInitial required>
+    <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.required">
+      Name is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field style="width:300px">
+    <mat-select #statusSelect placeholder="Status" [(value)]="status" required>
+      <mat-option *ngFor="let status of data.milestoneStatuses" [value]="status">{{status.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions layout="row">
+  <button mat-button (click)="cancel()" color="accent">Cancel</button>
+  <span style="flex: 1 1 auto"></span>
+  <button *ngIf="data.mode === 'Add'" mat-button (click)="addEdit()" color="primary">Add</button>
+  <button *ngIf="data.mode !== 'Add'" mat-button (click)="addEdit()" color="primary">Save</button>
+</div>

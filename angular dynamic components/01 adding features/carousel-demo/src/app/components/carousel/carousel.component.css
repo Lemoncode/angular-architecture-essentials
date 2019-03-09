@@ -1,0 +1,7 @@
+.carousel-container {
+  list-style: none;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

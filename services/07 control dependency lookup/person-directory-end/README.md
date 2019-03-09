@@ -26,7 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-* Angular has dependency herarchical injection, in result if we go to __person-component__, in order to resolve the depndency ity will go walk up the component tree, first start by the component metadata itself, in this case will not find such provider for this particular service, that means that will go to the next level, in this case __app-component__, here there isn't as well a provider for this service so it get to the top level where is really define it.
+* Angular has dependency herarchical injection, in result if we go to __person-component__, in order to resolve the dependency it will go walk up the component tree, first start by the component metadata itself, in this case will not find such provider for this particular service, that means that will go to the next level, in this case __app-component__, here there isn't as well a provider for this service so it get to the top level where is really define it.
 
 ```typescript app.module
 import { BrowserModule } from '@angular/platform-browser';

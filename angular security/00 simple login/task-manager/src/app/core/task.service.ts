@@ -21,12 +21,12 @@ export class TaskService {
     return this.httpClient.get<Task[]>(environment.apiRoot + 'tasks');
   }
 
-  getTask(TaskId: number): Observable<Task> {
-    return this.httpClient.get<Task>(environment.apiRoot + 'tasks/' + TaskId);
+  getTask(taskId: number): Observable<Task> {
+    return this.httpClient.get<Task>(environment.apiRoot + 'tasks/' + taskId);
   }
 
-  getTaskUsers(TaskId: number): Observable<UserProfile[]> {
-    return this.httpClient.get<UserProfile[]>(environment.apiRoot + 'tasks/' + TaskId + '/Users');
+  getTaskUsers(taskId: number): Observable<UserProfile[]> {
+    return this.httpClient.get<UserProfile[]>(environment.apiRoot + 'tasks/' + taskId + '/users');
   }
 
   addTask(Task: Task): Observable<Task> {
@@ -41,15 +41,15 @@ export class TaskService {
     return this.httpClient.post(environment.apiRoot + 'userPermission', userPermission);
   }
 
-  removeUserPermission(userId: string, TaskId: number) {
-    return this.httpClient.delete(`${environment.apiRoot}userPermission/?userId=${userId}&taskId=${TaskId}`);
+  removeUserPermission(userId: string, taskId: number) {
+    return this.httpClient.delete(`${environment.apiRoot}userPermission/?userId=${userId}&taskId=${taskId}`);
   }
 
   updateUserPermission(userPermission) {
     return this.httpClient.put(`${environment.apiRoot}userPermission`, userPermission);
   }
 
-  getMilestones(TaskId: number): Observable<Milestone[]> {
+  getMilestones(taskId: number): Observable<Milestone[]> {
     return this.httpClient.get<Milestone[]>(environment.apiRoot + 'milestone');
   }
 

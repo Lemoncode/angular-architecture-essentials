@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 * How we can scope a service to a particular component subtree? And basically how we can overwrite it.
-* Lets create a new component `pet`
+* Lets create a new component `female`
 
 ```bash
 ng g c female --is --it --flat --spec false

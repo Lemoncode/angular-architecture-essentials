@@ -30,4 +30,25 @@ export class CarouselComponent {
     instance.dataContext = data;
     this.items.push(instance);
   }
+
+  activeCarouselItem(item) {
+    this.resetActiveCarouselItems();
+    this.items
+      .find((i) => i.dataContext.id === item.id)
+      .toggleActive();
+  }
+
+  private resetActiveCarouselItems = () => (
+    this.items.forEach((i) => i.active = false)
+  );
+
+  deleteActiveCarouselItem(id: number) {
+    // Fetch the instance that have to be removed
+    const activeIndex = this.items.findIndex(i => i.dataContext.id === id && i.active);
+    this.items.splice(activeIndex, 1);
+    // To ensure we have destroy our component we have to get a reference to the view container ref
+    // and remove it from here.
+    const viewContainerRef = this.dynamicPlaceHolder.viewContainer;
+    viewContainerRef.remove(activeIndex);
+  }
 }
