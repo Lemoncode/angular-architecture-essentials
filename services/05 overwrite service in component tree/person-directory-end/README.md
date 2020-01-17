@@ -79,7 +79,7 @@ import { Component } from '@angular/core';
 export class AppComponent {}
 
 ```
-* If we run our application right now we will see that both components are didplaying the same data, both are getting access to the same service.
+* If we run our application right now we will see that both components are displaying the same data, both are getting access to the same service.
 
 * Lets now generate a new service female service
 

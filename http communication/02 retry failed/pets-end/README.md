@@ -63,7 +63,7 @@ export class PetsService {
 
 * Now when we run again and try to fetch the elements we can see that there are three attemps.
 
-* Retry consecutive calls to server, might not be the betst due to we are making consecutive calls to the server.
+* Retry consecutive calls to server, might not be the best due to we are making consecutive calls to the server.
 
 * We can also make these calls to the server after a while.
 

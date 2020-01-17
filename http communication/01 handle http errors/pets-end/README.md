@@ -34,11 +34,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * For that purpose we're going to use `HttpErrorResponse`
 * The nice thing of this type, it's that comes with all the related information about http error.  
 
-```diff app.common.ts
+```diff app.component.ts
 import { Component } from '@angular/core';
 import { PetsService } from './pets.service';
 
-import { HttpErrorResponse } from '@angular/common/http';
++import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
