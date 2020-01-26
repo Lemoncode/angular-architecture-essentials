@@ -80,7 +80,7 @@ ng g universal --clientProject sneakers
         }
 ```
 
-* The tscnfig.server.json
+* The tsconfig.server.json
 
 ```json
 {
@@ -348,5 +348,5 @@ export class ProductListComponent implements OnInit {
 }
 
 ```
-* We can check now that the meta tgas are added to our page.
+* We can check now that the meta tags are added to our page.
 

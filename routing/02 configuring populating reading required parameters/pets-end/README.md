@@ -57,7 +57,8 @@ import { PetsService } from './pets.service';
       <p>
         {{pet}}
       </p>
-      <button style="height: 20px;" (click)="showToys(pet)">Select Pet</button>
+-     <button style="height: 20px;">Select Pet</button>
++     <button style="height: 20px;" (click)="showToys(pet)">Select Pet</button>
     </div>
 
     <hr>
