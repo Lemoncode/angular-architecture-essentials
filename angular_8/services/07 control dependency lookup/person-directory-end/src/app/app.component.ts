@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoggerService, loggerFactory } from './logger.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
       Logger service
     </h2>
     <app-person></app-person>
-  `
+  `,
+  providers: [
+    {
+      provide: LoggerService,
+      useFactory: loggerFactory('AppComponent'),
+    }
+  ]
 })
 export class AppComponent {}

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { LoggerService } from './logger.service';
+import { Component, OnInit, Optional, SkipSelf, Host } from '@angular/core';
+import { LoggerService, loggerFactory } from './logger.service';
 
 @Component({
   selector: 'app-person',
@@ -8,11 +8,17 @@ import { LoggerService } from './logger.service';
       <p *ngIf="logger === null">No logger</p>
       <button (click)="doLog()">write log</button>
     </div>
-  `
+  `,
+  providers: [
+    {
+      provide: LoggerService,
+      useFactory: loggerFactory('PerosnComponent'),
+    }
+  ]
 })
 export class PersonComponent implements OnInit {
 
-  constructor(public logger: LoggerService) { }
+  constructor(@Host() @Optional() public logger: LoggerService) { }
 
   ngOnInit() {
   }
