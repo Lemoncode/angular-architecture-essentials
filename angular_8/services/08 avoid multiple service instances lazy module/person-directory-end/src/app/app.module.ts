@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PeopleModule } from './people/people.module';
-import { EmployeesModule } from './employees/employees.module';
+// import { EmployeesModule } from './employees/employees.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +15,8 @@ import { EmployeesModule } from './employees/employees.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PeopleModule,
-    EmployeesModule
+    PeopleModule.forRoot(),
+    // EmployeesModule
   ],
   bootstrap: [AppComponent]
 })
