@@ -1,0 +1,16 @@
+<h2 style="text-align: center;" >Custom components demo</h2>
+
+<app-carousel>
+  <app-carousel-item [template]="itemContent" [dataContext]="todo">
+  </app-carousel-item>
+</app-carousel>
+
+<ng-template #itemContent let-card="data">
+  <li class="carousel-item">
+    <h3 class="carousel-item carousel-item-header">{{card?.title}}</h3>
+    <div (click)="onCardSelected(card)">
+      {{card?.content}}
+    </div>
+  </li>
+</ng-template>
+
