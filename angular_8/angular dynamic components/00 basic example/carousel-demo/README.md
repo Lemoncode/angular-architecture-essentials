@@ -7,7 +7,7 @@
 * Create _todo.module_
 
 ```bash
-$ ng g m todo --skipTests
+$ ng g m todo 
 ```
 
 * Create _todo/todo.model.ts_
@@ -23,7 +23,7 @@ export interface Todo {
 * Create _todo/todo.service.ts_
 
 ```bash
-$ ng g s todo/todo --spec=false
+$ ng g s todo/todo --skipTests
 ```
 
 * Edit _todo/todo.module.ts_
@@ -85,12 +85,12 @@ export class TodoService {
 * First we create a new module
 
 ```bash
-$ ng g m components --spec=false
+$ ng g m components
 ```
 * Now lets create our _carousel component_, it's going to be a simple unordered list, but the point here, is that the items could be added dynamically.
 
 ```bash
-$ ng g c components/carousel --module=components.module --spec=false
+$ ng g c components/carousel --module=components --skipTests
 ```
 
 * Lets start edit its template _app/components/carousel.component.hml_
@@ -110,7 +110,7 @@ $ ng g c components/carousel --module=components.module --spec=false
 * Lets create this directive
 
 ```bash
-$ ng g d components/dynamic-carousel-item-anchor --module=components --spec=false
+$ ng g d components/dynamic-carousel-item-anchor --module=components --skipTests
 ```
 
 * Edit _app/components/dynamic-carousel-item-anchor.ts_
@@ -133,7 +133,7 @@ export class DynamicCarouselItemAnchorDirective {
 * At this point can create our _carousel item_
 
 ```bash
-$ ng g c components/carousel-item --module=components --spec=false
+$ ng g c components/carousel-item --module=components --skipTests
 ```
 * Edit _app/components/carousel-item.component.html_ as follows:
 
@@ -145,7 +145,7 @@ $ ng g c components/carousel-item --module=components --spec=false
 </div>
 ```
 
-* For rendering an external template, we need a new tag, which is the so-called ng-container.A container allows us to basically use its property, which is called ngTemplateOutlet, and assign ita template, which gets passed in as a reference from the outside.
+* For rendering an external template, we need a new tag, which is the so-called _ng-container_. A container allows us to basically use its property, which is called ngTemplateOutlet, and assign it a template, which gets passed in as a reference from the outside.
 
 * ngTemplateOutletContext allow us feed it with data.
 
@@ -331,7 +331,7 @@ export class AppComponent {
 }
 ```
 
-* If we run this nothing will desplayed, remember we need to include the carousel items usin our anchor reference _appDynamicCarouselItemAnchor_. To demonstrate that is working edit _app/components/carousel/carousel.component.html_ as follows:
+* If we run this nothing will desplayed, remember we need to include the carousel items using our anchor reference _appDynamicCarouselItemAnchor_. To demonstrate that is working edit _app/components/carousel/carousel.component.html_ as follows:
 
 ```html
 <ul class="carousel-container">

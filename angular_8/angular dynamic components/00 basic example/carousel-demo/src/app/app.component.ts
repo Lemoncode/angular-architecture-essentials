@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'carousel-demo';
+  todo = {
+    title: 'Foo title',
+    content: 'Foo content'
+  };
 }
