@@ -23,4 +23,4 @@ Also if we want to update our project references follow this [stackoverflow issu
 
 ## Update Guide
 
-Because there are multiple breaking changes between versions we can refer the following [gide to update](https://update.angular.io/?l=3&v=8.0-12.0)
+Because there are multiple breaking changes between versions we can refer the following [guide to update](https://update.angular.io/?l=3&v=8.0-12.0)
