@@ -56,3 +56,24 @@ In `RxJS`, **the stream of data is called an observable stream**. We emit any ty
 * Observables can be synchronous, meaning the items are emitted to the stream immediately, or asynchronous, meaning the items are emitted at some future point in time. 
 
 * Observables can emit a finite number of items, such as the numbers in an array, or an infinite number of items, such as a count when a timer goes off every second forever.
+
+```ts
+const beerObserver = {
+    next: beer => console.log(`beer was emitted ${beer}`),
+    error: err => console.log(`Error occurred: ${err}`),
+    complete: () => console.log(`No more beers, go home`),
+};
+
+const beerStream = new Observable(beerObserver => {
+    beerObserver.next('Beer 1');
+    beerObserver.next('Beer 2');
+    beerObserver.complete();
+});
+```
+
+In the constructor, we optionally provide a function. The argument passed to this function is the `observer`. The code in the function executes when the stream is started. Here we call next to emit two beer strings to the stream and then complete the stream. 
+
+Will this code emit two beer strings to our stream? Nope. Recall that observables are lazy and don't execute when they are defined.
+
+## Starting the Observable Stream/Subscription
+
