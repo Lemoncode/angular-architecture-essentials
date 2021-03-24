@@ -63,7 +63,7 @@ const beerObserver = {
     error: err => console.log(`Error occurred: ${err}`),
     complete: () => console.log(`No more beers, go home`),
 };
-
+// websockets - socket.io - 
 const beerStream = new Observable(beerObserver => {
     beerObserver.next('Beer 1');
     beerObserver.next('Beer 2');
@@ -80,7 +80,7 @@ Will this code emit two beer strings to our stream? Nope. Recall that observable
 With RxJS, we start the stream by calling the subscribe method of the observable. We must subscribe to an observable to start the stream; otherwise, no values are emitted to the stream, and we have nothing to observe.
 
 ```ts
-const beerObserver = {
+const observer = {
     next: beer => console.log(`beer was emitted ${beer}`),
     error: err => console.log(`Error occurred: ${err}`),
     complete: () => console.log(`No more beers, go home`),
@@ -181,7 +181,7 @@ ngAfterViewInit() {
 We can use `interval`
 
 ```ts
-const num = interval(1000).subscribe(console.log);
+const num = interval(1_000).subscribe(console.log);
 ```
 
 ## Creation Functions: Demo
