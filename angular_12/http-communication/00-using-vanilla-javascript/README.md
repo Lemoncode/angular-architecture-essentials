@@ -11,7 +11,7 @@
 Install `express` and `body-parser` as dev dependencies
 
 ```bash
-$ npm i express body-parser -D
+npm i express body-parser -D
 ```
 
 * `./server/pets.repository.js`
@@ -153,13 +153,13 @@ Update `package.json` as follows
 
 * Create a model for pets, for simpolicity will be the same structure as repository server entity model.
 
-__src\app\pet.model.ts__
+__src/app/pet.model.ts__
 
 ```typescript
 export interface PetModel {
   id: number;
   name: string;
-  spicies: string;
+  species: string;
 }
 
 ```
@@ -170,7 +170,7 @@ export interface PetModel {
 $ ng g s pets --skip-tests
 ```
 
-__src\app\pets.service.ts__
+__src/app/pets.service.ts__
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -200,9 +200,10 @@ export class PetsService {
 
 * Now edit as follows `app.component.ts`: 
 
-__src\app\app.component.ts__
+__src/app/app.component.ts__
 
-```typescript app.component.ts
+```ts 
+// app.component.ts
 import { Component } from '@angular/core';
 import { PetsService } from './pets.service';
 
@@ -236,7 +237,8 @@ export class AppComponent {
 * Lets start the app an try it.
 * This is nice but can we use `async/await`?
 
-```diff app.component.ts
+```diff 
+# app.component.ts
 import { Component } from '@angular/core';
 import { PetsService } from './pets.service';
 
