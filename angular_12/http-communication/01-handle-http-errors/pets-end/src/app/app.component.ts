@@ -21,11 +21,15 @@ import { HttpErrorResponse } from '@angular/common/http';
     <hr>
 
     <span>{{selectedPet?.name}}</span>
+    <p *ngIf="message">
+      {{message}}
+    </p>
   `,
 })
 export class AppComponent {
   pets: PetModel[] | null = null;
   selectedPet: PetModel | undefined;
+  message: string | undefined;
   
   constructor(private petsService: PetsService) {}
 
@@ -41,7 +45,7 @@ export class AppComponent {
         this.pets.push({
           id: Date.now(),
           name: 'Unnown',
-          species: 'UNknown'
+          species: 'Unknown'
         });
       });
   }
@@ -50,6 +54,12 @@ export class AppComponent {
     this.petsService.fetchPetById(id.toString())
       .subscribe((result) => {
         this.selectedPet = result;
+      }, (err: HttpErrorResponse) => {
+        if (err instanceof Error) {
+          this.message = `An error occured ${err.error.message}`;
+        } else {
+          this.message = `Backend returned error code ${err.status}`;
+        }
       });
   }
 }
