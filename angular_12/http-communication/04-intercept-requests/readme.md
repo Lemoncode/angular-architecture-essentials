@@ -35,7 +35,7 @@ export class PetsInterceptorService implements HttpInterceptor {
 * Lets start by a simple implementation 
 * This is just a service, but we have to register this service, in our `app.module`.
 
-__src\app\app.module.ts__
+__src/app/app.module.ts__
 
 ```diff app.module.ts
 import { BrowserModule } from '@angular/platform-browser';
@@ -72,7 +72,8 @@ export class AppModule { }
 
 __src/app/pets-interceptor.service.ts__
 
-```diff pets-interceptor.service.ts
+```diff 
+# pets-interceptor.service.ts
 import { Injectable } from '@angular/core';
 import {
   HttpInterceptor,
@@ -99,6 +100,7 @@ export class PetsInterceptorService implements HttpInterceptor {
 }
 
 ```
+
 * If we inspect headers on dev tools we will notice that our header has been set.
 
 * One thing that might be want to do is handling the response as well. `next.handle()` is returning an observable, so we can handle on it.
@@ -141,9 +143,10 @@ export class PetsInterceptorService implements HttpInterceptor {
 }
 
 ```
-* If we run the applicatin we must see the processing of the request.
 
-* For last we want to handle here as well the error when is raised.
+* If we run the application we must see response processing.
+
+* For last we want to handle here the error when is raised, as well.
 
 __src/app/pets-interceptor.service.ts__
 
