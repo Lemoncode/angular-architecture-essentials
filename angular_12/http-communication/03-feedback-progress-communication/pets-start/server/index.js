@@ -1,7 +1,10 @@
 const express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
-  repo = require('./pets.repository')();
+  repo = require('./pets.repository')(),
+  multer = require('multer');
+
+const upload = multer({dest: 'uploads'});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -37,6 +40,10 @@ app.post('/api/v1/pets', async (req, res, next) => {
   const result = await repo.addPet(pet);
   res.json(result);
   next();
+});
+
+app.post('/api/v1/pets/:id/image', upload.single('image'), (_, res) => {
+  res.send(res.file);
 });
 
 const port = 3000;
