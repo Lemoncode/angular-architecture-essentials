@@ -184,8 +184,8 @@ ngOnInit() {
 -   this.toys = this.petsService.fetcPetToys(this.selectedPet);
 +    this.route.params.subscribe((params) => {
 +      const { id } = params;
-+      this.selectedPet = this.petsService.fetchPetByName(id).name;
-+      this.toys = this.petsService.fetcPetToys(this.selectedPet);
++      this.selectedPet = this.petsService.fetchPetByName(id)!.name;
++      this.toys = this.petsService.fetchPetToys(this.selectedPet);
 +    })
   }
 ```
