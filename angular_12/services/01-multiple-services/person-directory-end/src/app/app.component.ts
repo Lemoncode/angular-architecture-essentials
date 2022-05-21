@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
     <h3>App component</h3>
     <app-person-edit></app-person-edit>
 
-    <app-child></app-child>
+    <button (click)="childVisible = !childVisible">Toggle</button>
+    <app-child *ngIf="childVisible"></app-child>
   `,
 })
 export class AppComponent {
   title = 'person-directory';
+  childVisible = true;
 }

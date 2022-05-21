@@ -7,10 +7,10 @@ import { PersonService } from './person.service';
     <h4>
       child component
     </h4>
-    <pre>{{ personService.getPerson() | json }}</pre>
+    <app-person-edit></app-person-edit>
   `,
-  styles: [
-  ]
+  styles: [],
+  providers: [PersonService]
 })
 export class ChildComponent implements OnInit {
 
