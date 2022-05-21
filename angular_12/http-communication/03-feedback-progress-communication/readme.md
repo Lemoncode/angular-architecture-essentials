@@ -66,7 +66,7 @@ export class PetsService {
     );
   }
 
-+ uploadPetImage(id, data): Observable<HttpEvent<Object>> {
++ uploadPetImage(id: id: number | string, data): Observable<HttpEvent<Object>> {
 +   const req = new HttpRequest(
 +     'POST',
 +     `${this.baseUrl}/${id}/image`,
@@ -79,13 +79,30 @@ export class PetsService {
 }
 
 ```
+
 * We already have the function to upload the file.
 
 * Now we can use it in our `app.component.ts`
 
 __src/app/app.component.ts__
 
-```typescript app.component.ts
+> Update __template__
+
+```html
+<!-- diff -->
+<hr>
+
+<input type="file" #fileUpload>
+<button (click)="uploadImage(fileUpload)">Upload</button>
+<p *ngIf="progress">
+  {{progress}}
+</p>
+<!-- diff -->
+```
+
+
+```typescript 
+// app.component.ts
 import { Component } from '@angular/core';
 import { PetsService } from './pets.service';
 /*diff*/
@@ -113,7 +130,7 @@ import { HttpErrorResponse, HttpEventType, HttpResponse } from '@angular/common/
     </p>
 
     <hr>
-
+    
     <input type="file" #fileUpload>
     <button (click)="uploadImage(fileUpload)">Upload</button>
     <p *ngIf="progress">
@@ -122,10 +139,10 @@ import { HttpErrorResponse, HttpEventType, HttpResponse } from '@angular/common/
   `
 })
 export class AppComponent {
-  pets;
-  selectedPet;
-  message;
-  progress; /*diff*/
+  pets: PetModel[] | null = null;
+  selectedPet: PetModel | undefined;
+  message: string | undefined;
+  progress: string | undefined; /*diff*/
 
   constructor(private petsService: PetsService) {}
 
@@ -155,11 +172,11 @@ export class AppComponent {
       );
   }
   /*diff*/
-  uploadImage(fileUpload) {
+  uploadImage(fileUpload: any) {
     const formData = new FormData();
     formData.append('image', fileUpload.files[0], 'image.jpg');
     this.petsService.uploadPetImage(
-      this.selectedPet.id,
+      this.selectedPet?.id!,
       formData
     ).subscribe((res) => {
       if (res.type === HttpEventType.UploadProgress) {
@@ -173,4 +190,7 @@ export class AppComponent {
 }
 
 ```
+
 * Now we can test how uplad works.
+
+> Use `Fast 3G` to notice uploading. 
