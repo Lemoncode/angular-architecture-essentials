@@ -75,7 +75,7 @@ export class AppRoutingModule { }
 
 ### Step 2. We can use a techniche to avoid this issue component less route
 
-> In version 11 both forms work!!
+> From version 11, there's no error, the routing just stop working.
 
 * Move `PetsComponent` as a child as well.
 * Now the parent route has no component.
