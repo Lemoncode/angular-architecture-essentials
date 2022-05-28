@@ -100,6 +100,9 @@ import { PeopleModule } from './people/people.module';
 export class AppModule { }
 
 ```
+
+> Run the application and add a new employee on `Home` and then navigate to `Employees`
+
 * What will happen now if we include a new item? If we introduce a new item in __home__ page (eager region loaded), we can check out that now is not reflected in the lazy loaded module.
 
 * The reason for this behavior is that lazy loaded modules, has its own injector.
@@ -126,7 +129,7 @@ import { PeopleService } from './people.service';
 - providers: [PeopleService]
 })
 export class PeopleModule {
-+  static forRoot(): ModuleWithProviders {
++  static forRoot(): ModuleWithProviders<any> {
 +    return {
 +      ngModule: PeopleModule,
 +      providers: [PeopleService]
@@ -135,6 +138,7 @@ export class PeopleModule {
 }
 
 ```
+
 * We are exposing this way our providers, making that will be just one instance per application.
 * Now we have to invoke forRoot when registering this module, this way will expose the object provided by `forRoot` making the service globally.
 
