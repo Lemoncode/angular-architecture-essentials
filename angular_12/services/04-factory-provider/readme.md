@@ -23,7 +23,7 @@ export class LoggerService {
 __src/app/service/logger.service.ts__
 
 ``` typescript
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 
 @Injectable()
 export class LoggerService {
