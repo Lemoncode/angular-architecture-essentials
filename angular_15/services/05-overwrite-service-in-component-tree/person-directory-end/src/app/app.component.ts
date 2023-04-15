@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
     <h1>Services</h1>
     <h3>App component</h3>
     <app-person></app-person>
+    <app-female></app-female>
   `,
 })
 export class AppComponent {}
