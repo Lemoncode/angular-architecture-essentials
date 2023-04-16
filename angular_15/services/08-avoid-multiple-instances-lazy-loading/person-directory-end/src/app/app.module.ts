@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { EmployeesModule } from './employees/employees.module';
+// import { EmployeesModule } from './employees/employees.module';
 import { HomeComponent } from './home.component';
 import { PeopleModule } from './people/people.module';
 
@@ -15,8 +15,8 @@ import { PeopleModule } from './people/people.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PeopleModule,
-    EmployeesModule
+    PeopleModule.forRoot(),
+    // EmployeesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
