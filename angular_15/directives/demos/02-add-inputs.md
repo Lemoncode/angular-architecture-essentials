@@ -77,8 +77,8 @@ import { Directive, HostBinding, Input } from '@angular/core';
 export class FirstDirective {
   @Input() first!: string;
   // @HostBinding() innerText = `I'm a directive`;
-  // @ts-ignore
-  @HostBinding() get innerText() {
+
+  @HostBinding() get innerText(): string {
     return this.innerText;
   }
 }
@@ -140,4 +140,29 @@ export class BasicComponent {
 <app-basic [first]="'Something'"></app-basic>
 +<app-basic [first]="'Another'"></app-basic>
 +<app-basic [first]="'Third'"></app-basic>
+```
+
+> EXERCISE: Display each node in a new line. Display each element on display block fashion
+
+```ts
+import {
+  Directive,
+  HostBinding,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
+
+@Directive({
+  selector: '[first]',
+})
+export class FirstDirective implements OnChanges {
+  @Input() first!: string;
+  @HostBinding() innerHtml = '';
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.innerHtml =  `<p>${changes['first'].currentValue}</p>`;
+  }
+}
+
 ```

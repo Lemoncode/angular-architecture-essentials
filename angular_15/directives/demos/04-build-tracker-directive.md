@@ -102,6 +102,8 @@ Once is injected we can start to use it:
 
 With this directive and service we can track any kind of event:
 
+> Exercise: Try to track mouse over events.
+
 ```ts
 export class TrackDirective {
   @Input() track!: string;
