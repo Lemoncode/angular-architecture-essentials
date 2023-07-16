@@ -1,6 +1,6 @@
 # Implement Structural Directive Data Binding with Context in Angular
 
-A structural directive like ngFor let us to pass data. If we declare our directive as follows:
+A structural directive like `ngFor` let us to pass data. If we declare our directive as follows:
 
 ```html
 <h1 *three="let message">{{message}}</h1>

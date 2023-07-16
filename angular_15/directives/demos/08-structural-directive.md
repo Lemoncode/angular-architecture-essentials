@@ -39,10 +39,10 @@ We can check now on browser's console that we're getting the `h1` element.
 
 ```diff
 -<h1 three>Hello World!</h1>
-<h1 *three>Hello World!</h1>
++<h1 *three>Hello World!</h1>
 ```
 
-We can check that nothing is rendered, and if we have a look into the console we can check that we have a message like `<!--container-->`. What is happening is that we have something like this:
+We can check that nothing is rendered, and if we have a look into the console using the dev tools, we can check that we have a message like `<!--container-->`. What is happening is that we have something like this:
 
 - Update `app.component.html`
 
