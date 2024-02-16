@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { LoggerService } from './logger.service';
+import { Component, OnInit, Optional, SkipSelf, Host } from '@angular/core';
+import { LoggerService, loggerFactory } from './logger.service';
 
 @Component({
   selector: 'app-person',
@@ -9,15 +9,18 @@ import { LoggerService } from './logger.service';
       <button (click)="doLog()">write log</button>
     </div>
   `,
-  styles: [
-  ]
+  styles: [],
+  providers: [
+    {
+      provide: LoggerService,
+      useFactory: loggerFactory('PersonComponent'),
+    },
+  ],
 })
 export class PersonComponent implements OnInit {
+  constructor(@Host() @Optional() public logger: LoggerService) {}
 
-  constructor(public logger: LoggerService) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   doLog() {
     if (this.logger) {
@@ -26,5 +29,4 @@ export class PersonComponent implements OnInit {
       console.log('no logger available');
     }
   }
-
 }

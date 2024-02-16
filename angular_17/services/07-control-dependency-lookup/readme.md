@@ -1,47 +1,42 @@
 # Control Dependency Lookup
 
-* Angular has dependency hirarchical injection, in result if we go to __person-component__, in order to resolve the dependency it will go walk up the component tree, first start by the component metadata itself, in this case will not find such provider for this particular service, that means that will go to the next level, in this case __app-component__, here there isn't as well a provider for this service so it get to the top level where is really define it.
+- Angular has dependency hirarchical injection, in result if we go to **person-component**, in order to resolve the dependency it will go walk up the component tree, first start by the component metadata itself, in this case will not find such provider for this particular service, that means that will go to the next level, in this case **app-component**, here there isn't as well a provider for this service so it get to the top level where is really define it.
 
-__src/app/app.module.ts__
+**src/app/app.module.ts**
 
 ```typescript app.module
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
-import { PersonComponent } from './person.component';
-import { LoggerService, loggerFactory } from './logger.service'
+import { AppComponent } from "./app.component";
+import { PersonComponent } from "./person.component";
+import { LoggerService, loggerFactory } from "./logger.service";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PersonComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, PersonComponent],
+  imports: [BrowserModule],
   providers: [
     {
       provide: LoggerService,
-      useFactory: loggerFactory('AppModule'),
-    }
+      useFactory: loggerFactory("AppModule"),
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}
 ```
-* If we run the application we will find out that the printed prefix will be 'AppModule'
-* Notice that in our component __person-component__ we're handling, that the injected service was not define.
 
-__src/app/person.component.ts__
+- If we run the application we will find out that the printed prefix will be 'AppModule'
+- Notice that in our component **person-component** we're handling, that the injected service was not define.
+
+**src/app/person.component.ts**
 
 ```typescript person.component.ts
-import { Component, OnInit } from '@angular/core';
-import { LoggerService } from './logger.service';
+import { Component, OnInit } from "@angular/core";
+import { LoggerService } from "./logger.service";
 
 @Component({
-  selector: 'app-person',
+  selector: "app-person",
   template: `
     <div style="border:1px;">
       <p *ngIf="logger === null">No logger</p>
@@ -50,26 +45,23 @@ import { LoggerService } from './logger.service';
   `,
 })
 export class PersonComponent implements OnInit {
-
-  constructor(public logger: LoggerService) { }
+  constructor(public logger: LoggerService) {}
 
   ngOnInit() {}
 
   doLog() {
     if (this.logger) {
-      this.logger.log('Message from person component');
+      this.logger.log("Message from person component");
     } else {
-      console.log('no logger available');
+      console.log("no logger available");
     }
   }
-
 }
-
 ```
 
-* What will happen if we remove the root providers? We will get an error that no provider has been define, but we're prepare in our component for such situation, what we can do?
+- What will happen if we remove the root providers? We will get an error that no provider has been define, but we're prepare in our component for such situation, what we can do?
 
-__src/app/app.module.ts__
+**src/app/app.module.ts**
 
 ```diff app.module.ts
 import { BrowserModule } from '@angular/platform-browser';
@@ -98,9 +90,10 @@ import { LoggerService, loggerFactory } from './logger.service'
 export class AppModule { }
 
 ```
-* We can use a decorator to mark this service as optional.
 
-__src\app\person.component.ts__
+- We can use a decorator to mark this service as optional.
+
+**src\app\person.component.ts**
 
 ```diff person.component.ts
 -import { Component, OnInit } from '@angular/core';
@@ -134,13 +127,14 @@ export class PersonComponent implements OnInit {
 }
 
 ```
-* What `@Optional` does is push null value whenever the requested service is not registered.
 
-* Now if we run the app we will get a different message.
+- What `@Optional` does is push null value whenever the requested service is not registered.
 
-* We have said that the DI is hirerchical so lets define the provider at __app-component__
+- Now if we run the app we will get a different message.
 
-__src/app/app.component.ts__
+- We have said that the DI is hirerchical so lets define the provider at **app-component**
+
+**src/app/app.component.ts**
 
 ```diff app.componet.ts
 import { Component } from '@angular/core';
@@ -164,9 +158,10 @@ import { Component } from '@angular/core';
 export class AppComponent {}
 
 ```
-* And do the same at __person-componet__
 
-__src/app/person.component.ts__
+- And do the same at **person-componet**
+
+**src/app/person.component.ts**
 
 ```diff person.component.ts
 import { Component, OnInit, Optional } from '@angular/core';
@@ -204,9 +199,10 @@ export class PersonComponent implements OnInit {
 }
 
 ```
-* Now if we click in our application button Angular will provide the first service in the hierarchy in this case __person-component__, the host itself, if we don't wnat this behavior we can use `@SkipSelf()` decorator that will jump in chain the host.
 
-__src/app/person.component.ts__
+- Now if we click in our application button Angular will provide the first service in the hierarchy in this case **person-component**, the host itself, if we don't wnat this behavior we can use `@SkipSelf()` decorator that will jump in chain the host.
+
+**src/app/person.component.ts**
 
 ```diff
 -import { Component, OnInit, Optional } from '@angular/core';
@@ -245,7 +241,8 @@ export class PersonComponent implements OnInit {
 }
 
 ```
-* We can make as well that only look at the host component using `@Host()` decorator instead `@SkipSelf()`
+
+- We can make as well that only look at the host component using `@Host()` decorator instead `@SkipSelf()`
 
 ```diff person.component.ts
 -import { Component, OnInit, Optional, SkipSelf } from '@angular/core';

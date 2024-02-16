@@ -14,10 +14,10 @@ import { PersonComponent } from './person.component';
     BrowserModule
   ],
   providers: [
-    {
-      provide: LoggerService,
-      useFactory: loggerFactory('AppModule'),
-    }
+    // {
+    //   provide: LoggerService,
+    //   useFactory: loggerFactory('AppModule'),
+    // }
   ],
   bootstrap: [AppComponent]
 })
