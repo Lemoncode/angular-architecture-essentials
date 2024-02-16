@@ -20,3 +20,4 @@ ng new <app> --standalone false
 - [NgModules - Providing Dependencies](https://angular.io/guide/providers)
 - [Angular 6 providedIn - how to customize the @Injectable() provider for dependency injection?](https://stackoverflow.com/questions/50489412/angular-6-providedin-how-to-customize-the-injectable-provider-for-dependenc)
 - [Configuring Dependency Providers](https://angular.io/guide/dependency-injection-providers#factory-providers-usefactory)
+- [Dependency injection and injectors hierarchy / Standalone components](https://angular.io/guide/standalone-components#dependency-injection-and-injectors-hierarchy)
