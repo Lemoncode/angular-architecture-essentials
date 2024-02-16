@@ -1,11 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
+import { WriterService } from './writer.service';
 
 @Injectable()
 export class LoggerService {
-
-  constructor() { }
+  constructor(
+    @Inject(Boolean) private isEnabled: boolean,
+    private writer: WriterService
+  ) {}
 
   log(msg: string) {
-    console.log(`logger: ${msg}`);
+    if (this.isEnabled) {
+      this.writer.write(msg);
+    }
   }
 }
