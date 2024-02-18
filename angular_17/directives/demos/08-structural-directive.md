@@ -12,13 +12,39 @@ ng g d three --skip-tests
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[three]'
+  selector: '[three]',
+  standalone: true,
 })
 export class ThreeDirective {
-
-  constructor(el: ElementRef) { 
+  constructor(el: ElementRef) {
     console.log(el.nativeElement);
   }
+}
+
+```
+
+- Update `app.component.ts`
+
+```diff
+# ....
++import { ThreeDirective } from './three.directive';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    FirstDirective,
+    BasicComponent,
+    TrackDirective,
+    OnlineDirective,
++   ThreeDirective
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+})
+export class AppComponent {
 }
 
 ```
@@ -75,6 +101,7 @@ import {
 
 @Directive({
   selector: '[three]',
+  standalone: true,
 })
 export class ThreeDirective implements AfterViewInit {
   constructor(

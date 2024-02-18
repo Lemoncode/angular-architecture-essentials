@@ -1,37 +1,3 @@
-# Implement Structural Directive Data Binding with Context in Angular
-
-A structural directive like `ngFor` let us to pass data. If we declare our directive as follows:
-
-```html
-<h1 *three="let message">{{message}}</h1>
-```
-
-It's the "same" as if we were declaring something like this:
-
-```html
-<ng-template let-message></ng-template>
-```
-
-- Update `app.component.ts`
-
-```diff
-export class AppComponent {
-+ message = 'Hola';
-  # ....
-}
-```
-
-- Update `app.component.html`
-
-```html
-<h1 *three="message; message as mymessage">
-  {{mymessage}}
-</h1>
-```
-
-- Update `three.directive.ts`
-
-```ts
 import {
   Directive,
   ElementRef,
@@ -62,5 +28,3 @@ export class ThreeDirective {
     console.log(el.nativeElement);
   }
 }
-
-```

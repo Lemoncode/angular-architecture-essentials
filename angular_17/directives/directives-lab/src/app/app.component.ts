@@ -6,6 +6,8 @@ import { BasicComponent } from './basic/basic.component';
 import { TrackDirective } from './track.directive';
 import { TrackingService } from './tracking.service';
 import { OnlineDirective } from './online.directive';
+import { ThreeDirective } from './three.directive';
+import { MyForDirective } from './my-for.directive';
 
 @Component({
   selector: 'app-root',
@@ -16,13 +18,17 @@ import { OnlineDirective } from './online.directive';
     FirstDirective,
     BasicComponent,
     TrackDirective,
-    OnlineDirective
+    OnlineDirective,
+    ThreeDirective,
+    MyForDirective
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  one = {message: 'Hello one'};
-  two = {message: 'Hello two'};
-  three = {message: 'Hello three'};
+  items = [
+    {
+      name: 'Foo'
+    }
+  ];
 }

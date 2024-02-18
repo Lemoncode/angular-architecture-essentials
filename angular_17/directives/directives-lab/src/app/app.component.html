@@ -1,16 +1,9 @@
-<ng-template #foo let-message="message">
-  <h1>{{message}}</h1>
-</ng-template>
+<!-- <h1 *three="message; message as mymessage">
+  {{mymessage}}
+</h1> -->
 
-<div
-  [ngTemplateOutlet]="foo"
-  [ngTemplateOutletContext]="one"
-></div>
-<div
-  [ngTemplateOutlet]="foo"
-  [ngTemplateOutletContext]="two"
-></div>
-<div
-  [ngTemplateOutlet]="foo"
-  [ngTemplateOutletContext]="three"
-></div>
+<ul>
+  <li *myFor="let item of items">
+    {{ item.name }}
+  </li>
+</ul>

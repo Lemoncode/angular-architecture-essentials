@@ -1,3 +1,5 @@
+# Dynamic Context
+
 We can feed the data context of the element that we're feeding into our structural directive. We're going to create our own `ngFor`
 
 ```bash
@@ -9,6 +11,7 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
   selector: '[myFor][myForOf]',
+  standalone: true,
 })
 export class MyForDirective {
   @Input()
@@ -32,6 +35,24 @@ export class MyForDirective {
 
 ```diff
 # ....
++import { MyForDirective } from './my-for.directive';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    FirstDirective,
+    BasicComponent,
+    TrackDirective,
+    OnlineDirective,
+    ThreeDirective,
++   MyForDirective
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+})
 export class AppComponent {
 # ....
 +  items = [
