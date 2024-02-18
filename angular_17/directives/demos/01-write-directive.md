@@ -14,13 +14,32 @@ ng g d first --skip-tests
 import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
-  selector: 'h1'
+  selector: 'h1',
+  standalone: true
 })
 export class FirstDirective {
-  @HostBinding() innerText = `I'm a directive`;
+  @HostBinding() innerText = `I'm a directive`
 }
-
 ```
+
+Update `app.component.ts`
+
+```diff
+# ....
++import { FirstDirective } from './first.directive';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+- imports: [CommonModule, RouterOutlet],
++ imports: [CommonModule, RouterOutlet, FirstDirective],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+# ....
+```
+
+Open browser
 
 ```bash
 npm start

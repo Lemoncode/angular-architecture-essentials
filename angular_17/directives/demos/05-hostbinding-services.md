@@ -10,6 +10,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    FirstDirective,
+    BasicComponent,
+    TrackDirective,
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

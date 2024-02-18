@@ -7,18 +7,43 @@ ng g d track --skip-tests
 - Update `track.directive.ts`
 
 ```ts
-import { Directive, HostListener, Input } from '@angular/core';
+import { Directive, HostListener, Input } from "@angular/core";
 
 @Directive({
-  selector: '[track]'
+  selector: "[track]",
+  standalone: true,
 })
 export class TrackDirective {
   @Input() track!: string;
 
-  @HostListener('click')
+  @HostListener("click")
   onClick() {
     console.log(this.track);
   }
+}
+```
+
+- Update `app.component.ts`
+
+```diff
+# ....
++import { TrackDirective } from './track.directive';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    FirstDirective,
+    BasicComponent,
++   TrackDirective,
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+})
+export class AppComponent {
+  title = 'directives-lab';
 }
 
 ```
@@ -29,7 +54,6 @@ export class TrackDirective {
 <button [track]="'One Button'">One</button>
 <button>Two</button>
 <button>Three</button>
-
 ```
 
 We can added to the other buttons:
@@ -53,10 +77,10 @@ Now we're going to update the service to register the tracking events:
 - Update `tracking.service.ts`
 
 ```ts
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class TrackingService {
   logs: string[] = [];
@@ -66,7 +90,6 @@ export class TrackingService {
     console.log(this.logs);
   }
 }
-
 ```
 
 And now we can inject it into our directive:
@@ -108,22 +131,20 @@ With this directive and service we can track any kind of event:
 export class TrackDirective {
   @Input() track!: string;
 
-  @HostListener('click')
+  @HostListener("click")
   onClick() {
-   
     this.trackService.log(
-      JSON.stringify({ event: 'click', message: this.track })
+      JSON.stringify({ event: "click", message: this.track })
     );
   }
   /*diff*/
-  @HostListener('mouseover')
+  @HostListener("mouseover")
   onMouseover() {
     this.trackService.log(
-      JSON.stringify({ event: 'mouseover', message: this.track })
+      JSON.stringify({ event: "mouseover", message: this.track })
     );
   }
   /*diff*/
   constructor(private trackService: TrackingService) {}
 }
-
 ```

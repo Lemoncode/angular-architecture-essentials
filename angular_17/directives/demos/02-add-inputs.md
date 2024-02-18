@@ -11,18 +11,34 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-basic',
+  standalone: true,
+  imports: [],
   template: `
     <div>
       {{message}}
     </div>
   `,
-  styles: [
-  ]
+  styles: ``
 })
 export class BasicComponent {
   @Input() message!: string;
 }
 
+```
+
+- Update `app.component.ts`
+
+```diff
++import { BasicComponent } from './basic/basic.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+- imports: [CommonModule, RouterOutlet, FirstDirective],
++ imports: [CommonModule, RouterOutlet, FirstDirective, BasicComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+})
 ```
 
 - Update `app.component.html`
@@ -54,7 +70,8 @@ So we have to make `first` as an Input on Directive to make this work:
 +import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[first]'
+  selector: '[first]',
+  standalone: true
 })
 export class FirstDirective {
 + @Input() first!: string;
@@ -72,7 +89,8 @@ Now our output is `I'm a directive`, what if I want to reflect the value that is
 import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[first]'
+  selector: '[first]',
+  standalone: true
 })
 export class FirstDirective {
   @Input() first!: string;

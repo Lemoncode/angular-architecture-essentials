@@ -16,6 +16,7 @@ import {
 
 @Directive({
   selector: '[first]',
+  standalone: true,
 })
 export class FirstDirective implements OnChanges {
   @Input() first!: string;
