@@ -1,7 +1,16 @@
-<button [track]="'One Button'">One</button>
-<button [track]="'Two Button'">Two</button>
-<button [track]="'Three Button'">Three</button>
+<ng-template #foo let-message="message">
+  <h1>{{message}}</h1>
+</ng-template>
 
-<div *ngFor="let log of tracking.logs">
-  {{ log | json }}
-</div>
+<div
+  [ngTemplateOutlet]="foo"
+  [ngTemplateOutletContext]="one"
+></div>
+<div
+  [ngTemplateOutlet]="foo"
+  [ngTemplateOutletContext]="two"
+></div>
+<div
+  [ngTemplateOutlet]="foo"
+  [ngTemplateOutletContext]="three"
+></div>

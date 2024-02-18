@@ -52,9 +52,11 @@ ng g d online --skip-tests
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[online]'
+  selector: '[online]',
+  standalone: true
 })
 export class OnlineDirective {}
+
 
 ```
 
@@ -93,7 +95,8 @@ import { OnlineService } from './online.service';
 /*diff*/
 
 @Directive({
-  selector: '[online]'
+  selector: '[online]',
+  standalone: true
 })
 export class OnlineDirective {
   /*diff*/
@@ -107,6 +110,28 @@ export class OnlineDirective {
 ```
 
 Now to see this in action, we have to use the new directive.
+
+- Update `app.component.ts`
+
+```diff
+# ....
++import { OnlineDirective } from './online.directive';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    FirstDirective,
+    BasicComponent,
+    TrackDirective,
++   OnlineDirective
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+})
+```
 
 - Update `app.component.html`
 

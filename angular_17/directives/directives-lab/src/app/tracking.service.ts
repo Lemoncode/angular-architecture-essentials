@@ -8,6 +8,5 @@ export class TrackingService {
   
   log(trackingEvent: string) {
     this.logs.push(trackingEvent);
-    console.log(this.logs);
   }
 }

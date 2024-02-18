@@ -46,6 +46,8 @@ import {
 
 @Component({
   selector: 'app-basic',
+  standalone: true,
+  imports: [],
   template: ` <ng-template #foo> This is content inside a template </ng-template> `,
   styles: [],
 })
