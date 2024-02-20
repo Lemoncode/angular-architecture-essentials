@@ -1,0 +1,7 @@
+<div>
+  <h3>Advertisements</h3>
+  <ng-container
+    *ngComponentOutlet="currentAd.component; inputs: currentAd.inputs"
+  />
+  <button (click)="displayNextAd()">Next</button>
+</div>

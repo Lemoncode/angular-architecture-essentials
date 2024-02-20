@@ -14,6 +14,7 @@ ng new <app> --standalone false
 - https://angular.io/guide/dynamic-component-loader
 - https://angular.dev/guide/components/programmatic-rendering
 - https://blog.stackademic.com/dynamic-component-in-angular-86d75dc561ee
+- [Why and When Use Ng-template, NgContent, and NgContainer in Angular](https://dev.to/this-is-angular/why-and-when-use-ng-template-ngcontent-and-ngcontainer-in-angular-2kho#:~:t)
 
 ### Dependency Injection
 
