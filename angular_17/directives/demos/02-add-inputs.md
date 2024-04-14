@@ -97,7 +97,7 @@ export class FirstDirective {
   // @HostBinding() innerText = `I'm a directive`;
 
   @HostBinding() get innerText(): string {
-    return this.innerText;
+    return this.first;
   }
 }
 ```

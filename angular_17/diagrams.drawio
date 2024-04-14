@@ -1,0 +1,150 @@
+<mxfile host="app.diagrams.net" modified="2024-04-14T10:16:17.249Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="tUhBliMA0OS26-FejFcj" version="24.2.5" type="device" pages="2">
+  <diagram name="Page-1" id="drsBZOo5uSJMPDdJgg24">
+    <mxGraphModel dx="1165" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-2" value="constructor" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=5;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
+          <mxGeometry x="340" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="154" y="140" width="520" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-4" value="afterRender" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=5;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="340" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-5" value="ngOnChanges" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="345" y="180" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-6" value="ngOnInit" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="345" y="250" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-7" value="ngDoCheck" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="345" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-8" value="ngAfterContentInit" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="200" y="390" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-9" value="ngAfterViewInit" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="455" y="390" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-10" value="ngAfterContentChecked" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="200" y="460" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-11" value="ngAfterViewChecked" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="455" y="460" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-12" value="Change detection" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="160" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-15" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="399.5" y="220" as="sourcePoint" />
+            <mxPoint x="399.5" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-16" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="401.5" y="290" as="sourcePoint" />
+            <mxPoint x="401.5" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-17" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="360" as="sourcePoint" />
+            <mxPoint x="310" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-19" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="360" as="sourcePoint" />
+            <mxPoint x="490" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-20" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="399.5" y="90" as="sourcePoint" />
+            <mxPoint x="399.5" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-21" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="399.5" y="550" as="sourcePoint" />
+            <mxPoint x="399.5" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-22" value="Rendering" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="555" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-23" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="274.5" y="430" as="sourcePoint" />
+            <mxPoint x="274.5" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skmmMMjCMmu6W-BcoXm9-24" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="529.5" y="430" as="sourcePoint" />
+            <mxPoint x="529.5" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="kxRlUlTaGpndBlxnvitJ" name="Page-2">
+    <mxGraphModel dx="1165" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ivwZVv2qkikrarJOfffd-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="154" y="210" width="520" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-3" value="afterRender" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=5;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="345" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-4" value="ngOnChanges" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="345" y="242" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-6" value="ngDoCheck" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="345" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-9" value="ngAfterContentChecked" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="200" y="389" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-10" value="ngAfterViewChecked" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="455" y="389" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-11" value="Change detection" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="230" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-12" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="399.5" y="282" as="sourcePoint" />
+            <mxPoint x="399.5" y="312" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-14" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="360" as="sourcePoint" />
+            <mxPoint x="310" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-15" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="360" as="sourcePoint" />
+            <mxPoint x="490" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-17" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="399.5" y="470" as="sourcePoint" />
+            <mxPoint x="399.5" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ivwZVv2qkikrarJOfffd-18" value="Rendering" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="480" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

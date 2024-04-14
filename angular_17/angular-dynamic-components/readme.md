@@ -291,3 +291,5 @@ Update `src/app/app.component.html`
 ```bash
 npm start
 ```
+
+- https://angular.dev/guide/components/programmatic-rendering
