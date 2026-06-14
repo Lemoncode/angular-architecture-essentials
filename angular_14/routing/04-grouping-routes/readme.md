@@ -73,9 +73,9 @@ export class AppRoutingModule { }
 
 * routes works with herarchies, if the herarchy is right it will now in which outlet has to inject the component.
 
-### Step 2. We can use a techniche to avoid this issue component less route
+### Step 2. We can use a technique to avoid this issue component less route
 
-> From version 11, there's no error, the routing just stop working.
+> From version 11, there's no error, the routing just stop working. To see we need to enable tracing `RouterModule.forRoot(routes, { enableTracing: true })`
 
 * Move `PetsComponent` as a child as well.
 * Now the parent route has no component.

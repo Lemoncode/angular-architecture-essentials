@@ -2,22 +2,45 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { PageNotFoundComponent } from './page-not-found.component';
-import { WelcomeComponent } from './welcome.component';
-// import { PetsComponent } from './pets.component';
+import { PersonService } from './person.service';
+import { ChildComponent } from './child.component';
+import { PersonEditComponent } from './person-edit.component';
+import { LoggerService } from './service/logger.service';
+import { PersonComponent } from './person.component';
+import { WriterService } from './service/writer.service';
+import { FemaleComponent } from './female.component';
+import { FemaleService } from './female.service';
+// import { NewLoggerService } from './service/new-logger.service';
 
-import { AppRoutingModule } from './app-routing.module';
-import { PetsModule } from './pets/pets.module';
+// const simpleLogger = {
+//   log(msg: string) {
+//     console.log(`I am a simple logger; ${msg}`);
+//   }
+// }
+
+const loggerFactory = (writer: WriterService) => {
+  return new LoggerService(true, writer);
+};
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    WelcomeComponent,
-    // PetsComponent,
+    ChildComponent,
+    PersonEditComponent,
+    PersonComponent,
+    FemaleComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, PetsModule],
-  providers: [],
+  imports: [BrowserModule],
+  providers: [
+    PersonService,
+    FemaleService,
+    WriterService,
+    {
+      provide: LoggerService,
+      useFactory: loggerFactory,
+      deps: [WriterService],
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
