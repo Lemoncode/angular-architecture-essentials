@@ -1,12 +1,58 @@
 import { Component } from '@angular/core';
+import { PetsService } from './pets.service';
+
+import { HttpErrorResponse } from '@angular/common/http';
+import { PetModel } from './pet.model';
 
 @Component({
   selector: 'app-root',
   template: `
-    <h1>Services</h1>
-    <h3>App component</h3>
-    <app-person></app-person>
-    <app-female></app-female>
+    <button (click)="fetchPets()">Fetch Pets</button>
+
+    <hr />
+
+    <ul>
+      <li *ngFor="let pet of pets" (click)="fetchPet(pet.id)">
+        {{ pet.name }}
+      </li>
+    </ul>
+
+    <hr />
+
+    <span>{{ selectedPet?.name }}</span>
+    <p *ngIf="message">
+      {{ message }}
+    </p>
   `,
 })
-export class AppComponent {}
+export class AppComponent {
+  pets: PetModel[] | null = null;
+  selectedPet: PetModel | undefined;
+  message: string | undefined;
+
+  constructor(private petsService: PetsService) {}
+
+  fetchPets() {
+    this.petsService.fetchPets().subscribe((result) => {
+      this.pets = result;
+      this.pets.push({
+        id: Date.now(),
+        name: 'Unknown',
+        species: 'Unknown',
+      });
+    });
+  }
+
+  fetchPet(id: any) {
+    this.petsService.fetchPetById(id).subscribe({
+      next: (result) => (this.selectedPet = result),
+      error: (err: HttpErrorResponse) => {
+        if (err instanceof Error) {
+          this.message = `An error occured ${err.error.message}`;
+        } else {
+          this.message = `Backend returned error code ${err.status}`;
+        }
+      },
+    });
+  }
+}

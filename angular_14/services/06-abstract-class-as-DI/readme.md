@@ -5,6 +5,7 @@
 * In this case we will want to generalize the DI of the people-service more, basically have a base class from the other implementations inherit.
 
 ```bash
+npx ng g s people --skip-tests
 ```
 
 ```typescript people.service.ts
